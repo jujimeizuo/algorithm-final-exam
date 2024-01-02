@@ -1,0 +1,131 @@
+site_name: 江南大学 2023 年算法设计与分析期末复习
+site_url: https://algorithm-final-exam/jujimeizuo.cn/
+repo_name: jujimeizuo/algorithm-final-exam
+repo_url: https://github.com/jujimeizuo/algorithm-final-exam
+edit_uri: tree/master/docs/
+site_description: 江南大学 2023 年算法设计与分析期末复习
+copyright: Copyright &copy; 2024-2024 <a href="https://github.com/jujimeizuo" target="_blank" rel="noopener">jujimeizuo</a>
+
+theme: 
+  name: 'material'
+  language: 'zh'
+  icon: 
+    logo: material/notebook-outline
+  custom_dir: overrides
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font: false
+  palette:
+    - scheme: default
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jujimeizuo/
+    - icon: fontawesome/solid/rss
+      link: http://www.jujimeizuo.cn/blog/
+    - icon: fontawesome/solid/home
+      link: https://jujimeizuo.cn/
+
+
+extra_css:
+  # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://cdn.jujimeizuo.cn/utils/katex.min.css
+  - https://cdn.jujimeizuo.cn/jbmono/jetbrainsmono.css
+  - https://cdn.jujimeizuo.cn/lxgw/lxgwscreen.css
+  - css/tasklist.css
+  - css/custom.css
+  - css/card.css
+  - css/flink.css
+  - css/changelog_extra.css
+  # - css/heti.css
+
+extra_javascript:
+  # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+  - https://cdn.jujimeizuo.cn/utils/katex.min.js
+  - js/katex.js
+  # - js/heti.js
+  # - js/scheme.js # this is in template 'base.html'
+
+
+plugins:
+  - rss
+  - search
+  - glightbox:
+      width: 80%
+  - encryptcontent:  # now just for one page, need to be improved
+      title_prefix: "🔒 "
+      remember_password: True 
+      default_expire_dalay: 48
+      decryption_failure_message: '密码错误'
+      encrypted_something:
+        mkdocs-encrypted-toc: [nav, class]
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+  - statistics:
+      page_check_metadata: comment
+  - heti:
+      extra_skipped_class:
+        - arithmatex
+
+nav:
+    - 主页: index.md
+    - 递归与分治:
+      - 1/index.md
+    - 动态规划:
+      - 2/index.md
+    - 贪心:
+      - 3/index.md
+    - 回溯法:
+      - 4/index.md
+    - 分支限界法:
+      - 5/index.md
+    - 随机算法:
+      - 6/index.md
+    - 线性规划与网络流:
+      - 7/index.md
+    - 串与序列算法:
+      - 8/index.md
